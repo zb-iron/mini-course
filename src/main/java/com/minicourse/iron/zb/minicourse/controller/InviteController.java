@@ -1,19 +1,22 @@
 package com.minicourse.iron.zb.minicourse.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.minicourse.iron.zb.minicourse.dto.InviteDto;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
+@Validated
 @RestController
+@RequestMapping("/api/v1")
 public class InviteController {
-    @GetMapping("/api/v1/invite")
-    public String getInvite() {
-        return "invite";
+    @GetMapping("/invite/{link}")
+    public String getInvite(@PathVariable("link") String linkIn) {
+        return linkIn;
     }
 
-    @PostMapping("/api/v1/invite/{link}")
-    public String setInvite(@PathVariable("link") String linkIn) {
-        return linkIn;
+    @PostMapping("/invite")
+    public InviteDto setInvite(@Valid @RequestBody InviteDto inviteDtoIn) {
+        return inviteDtoIn;
     }
 }

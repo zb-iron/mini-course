@@ -8,27 +8,20 @@
 * Java : JDK11(AWS Corretto)
 * Test Tool : Junit5
 * Database : h2-2.2.224
+* lobok : getter, setter 등 개발 편의성을 위해 사용
 
-## 환경변수
+## h2 DB 프로퍼티 공유
 
 ```shell
-export DATABASE_URL="your h2 database url"
-export DATABASE_USERNAME="your h2 database username"
-export DATABASE_PASSWORD="your h2 database password"
+DATABASE_URL="jdbc:h2:tcp://localhost/~/Document/h2"
+DATABASE_USERNAME="sa"
+DATABASE_PASSWORD="없음"
 ```
 
 ## 실행
 
-### 환경변수 설정한 경우
-
 ```shell
 java -jar mini-course.jar
-```
-
-### 환경변수 미설정
-
-```shell
-java -jar -DDATABASE_URL="yourdbname" -DDATABASE_USERNAME="yourusername" -DDATABASE_PASSWORD="yourpassword" ./build/libs/mini-course-0.0.1-SNAPSHOT.jar    
 ```
 
 ## 1) 참여자 초대
@@ -61,7 +54,7 @@ java -jar -DDATABASE_URL="yourdbname" -DDATABASE_USERNAME="yourusername" -DDATAB
     {
     	"email" : "str|required",
     	"name" : "str|required",
-    	"phone" : "int:required",
+    	"phone" : "str|required",
     	"groupName" : "str|nullable",
     	"groupOwner" : "str|nullable"
     }
