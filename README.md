@@ -1,5 +1,6 @@
 # ZB MINI COURSE
-
+## Download
+[mini-course-0.0.1-SNAPSHOT.jar](https://github.com/zb-iron/mini-course/raw/main/mini-course-0.0.1-SNAPSHOT.jar)
 ## Dependency
 
 * Device : Macbook Air (M1)
@@ -15,15 +16,15 @@
 ```shell
 DATABASE_URL="jdbc:h2:tcp://localhost/~/Document/h2"
 DATABASE_USERNAME="sa"
-DATABASE_PASSWORD="없음"
 ```
-
+- 데이터베이스 비밀번호 없음
 ## 실행
 
 ```shell
-java -jar mini-course.jar
+java -jar mini-course-0.0.1-SNAPSHOT.jar
 ```
 
+# 내용
 ## 1) 참여자 초대
 
 1. 그룹 매니저는 그룹에 참여자를 초대할 수 있다.
